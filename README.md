@@ -3,6 +3,18 @@
 Aplicación web tipo CRM para la gestión de clientes, desarrollada con JavaScript Vanilla y Tailwind CSS.  
 La información se persiste localmente utilizando IndexedDB.
 
+## 🖼️ Vista previa
+
+![CRM - Vista principal](./screenshots/crm-home.png)
+
+### Alta / edición de clientes
+
+![CRM - Formulario](./screenshots/crm-form.png)
+
+### Responsive Design / mobile view
+
+![CRM - Formulario](./screenshots/crm-mobile.png)
+
 ## 🚀 Demo
 
 Proyecto ejecutado en entorno local (IndexedDB).
