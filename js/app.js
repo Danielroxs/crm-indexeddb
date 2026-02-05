@@ -322,6 +322,16 @@ class CRMApp {
         
         const now = new Date();
         const diffMs = now - date;
+        
+        // Handle future dates
+        if (diffMs < 0) {
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            });
+        }
+        
         const diffMins = Math.floor(diffMs / 60000);
         const diffHours = Math.floor(diffMs / 3600000);
         const diffDays = Math.floor(diffMs / 86400000);
