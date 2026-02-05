@@ -291,6 +291,19 @@ class CRMApp {
         const toastMessage = document.getElementById('toastMessage');
         
         toastMessage.textContent = message;
+        
+        // Remove any existing type classes
+        toast.classList.remove('bg-gray-800', 'bg-red-600', 'bg-green-600');
+        
+        // Add appropriate background color based on type
+        if (type === 'error') {
+            toast.classList.add('bg-red-600');
+        } else if (type === 'success') {
+            toast.classList.add('bg-green-600');
+        } else {
+            toast.classList.add('bg-gray-800');
+        }
+        
         toast.classList.remove('hidden');
         
         // Auto hide after 3 seconds
@@ -301,6 +314,12 @@ class CRMApp {
 
     formatDate(dateString) {
         const date = new Date(dateString);
+        
+        // Validate the date
+        if (isNaN(date.getTime())) {
+            return 'Unknown date';
+        }
+        
         const now = new Date();
         const diffMs = now - date;
         const diffMins = Math.floor(diffMs / 60000);
